@@ -14,7 +14,7 @@ mongo.connect(dbURI, function(err, database) {
 });
 
 // test insert
-mongo.collections('test').insertOne({"name": "Erik", "time": new Date()});
+mongo.collection('test').insertOne({"name": "Erik", "time": new Date()});
 
 app.set('port', (process.env.PORT || 5000));
 
