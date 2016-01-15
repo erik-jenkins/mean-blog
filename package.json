@@ -1,5 +1,5 @@
 {
-  "name": "MEAN Blog",
+  "name": "mean-blog",
   "version": "0.0.1",
   "description": "A blog written using the MEAN stack",
   "main": "index.js",
