@@ -5,10 +5,23 @@
   <title>Erik Jenkins</title>
 </head>
 <body ng-controller="MainCtrl">
-  {{ message }}
-  <!-- scripts -->
+
+  <!-- header -->
+  <ng-include src="'views/header.html'"></ng-include>
+
+  <!-- view -->
+  <ng-view>
+
+  <!-- angular -->
   <script src="js/lib/angular.min.js"></script>
+  <script src="js/lib/angular-route.min.js"></script>
+
+  <!-- application -->
   <script src="js/app.js"></script>
   <script src="js/controllers/MainCtrl.js"></script>
+  <script src="js/controllers/LoginCtrl.js"></script>
+  <script src="js/controllers/PostListCtrl.js"></script>
+  <script src="js/controllers/ViewPostCtrl.js"></script>
+  <script src="js/controllers/WritePostCtrl.js"></script>
 </body>
 </html>
