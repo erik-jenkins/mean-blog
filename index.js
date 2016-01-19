@@ -1,16 +1,24 @@
-var assert  = require('assert');
+var bodyParser = require('body-parser');
+var database = require('./config/database');
 var express = require('express');
-var mongo   = require('mongodb').MongoClient;
-app = express();
+var mongoose = require('mongoose');
 
-var dbURI = 'mongodb://heroku_9dr87f8p:f1jndcla6mb8cps74d7iplass9@ds047075.mongolab.com:47075/heroku_9dr87f8p';
-app.set('port', (process.env.PORT || 5000));
-app.use(express.static('app'));
+// configure express
+var app = express();
+app.use(express.static('public'));
+var port = process.env.PORT || 5000;
 
-mongo.connect(dbURI, function(err, db) {
-  assert.equal(null, err);
+// connect to database
+mongoose.connect(database.URI);
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
 
-  app.listen(app.get('port'), function() {
-    console.log("Express listening on port " + app.get('port'));
-  });
-});
+// middleware
+app.use(bodyParser.json());
+
+// routes
+require('./app/routes.js')(app);
+
+// listen
+app.listen(port);
+console.log("Express application listening on port " + port);

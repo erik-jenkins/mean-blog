@@ -10,7 +10,9 @@
     "node": "5.4.0"
   },
   "dependencies": {
+    "body-parser": "^1.14.2",
     "express": "^4.13.3",
-    "mongodb": "^2.1.4"
+    "mongodb": "^2.1.4",
+    "mongoose": "^4.3.6"
   }
 }
