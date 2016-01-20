@@ -1,11 +1,16 @@
-<form novalidate>
-  <p class="error" ng-bind="error"></p>
-  <input type="text" class="form-control" ng-model="post.title" placeholder="Post title">
-  <input type="text" class="form-control" ng-model="post.slug" placeholder="Post slug">
-  <textarea name="name" class="form-control" ng-model="post.content" placeholder="Post content"></textarea>
-  <input type="text" class="form-control" ng-model="post.tags" placeholder="Comma-separated tags" ng-list>
-  <div>
-    <span ng-repeat="tag in post.tags" ng-bind="tag"></span>
+<div class="writepost">
+  <form novalidate>
+    <p class="error" ng-bind="error"></p>
+    <input type="text" class="form-control" ng-model="post.title" placeholder="Post title" ng-required>
+    <input type="text" class="form-control" ng-model="post.slug" placeholder="Post slug" ng-required>
+    <textarea name="name" class="form-control" ng-model="post.content" placeholder="Post content" ng-required></textarea>
+    <input type="text" class="form-control" ng-model="post.tags" placeholder="Comma-separated tags" ng-list>
+    <input type="submit" class="btn btn-primary" ng-click="submitPost()" value="Submit post">
+  </form>
+
+  <p ng-show="post">
+    Post preview:
+  </p>
+  <div class="post-preview" ng-include="'views/partials/post.html'">
   </div>
-  <input type="submit" class="btn btn-primary" ng-click="submitPost()" value="Submit post">
-</form>
+</div>

@@ -1,4 +1,4 @@
-angular.module('mean-blog', ['ngRoute'])
+angular.module('mean-blog', ['ngRoute', 'ngSanitize'])
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider
       .when('/posts', {
