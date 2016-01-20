@@ -29,8 +29,14 @@ module.exports = function(app) {
     // submit post to database
     var post = new Post(req.body);
     post.timestamp = Date.now();
+    
+    // attempt to save post
     post.save(function(err, post) {
-      if(err) res.json(err);
+      if (err) {
+        console.log(err);
+        res.status(400).json(err);
+      }
+      
       res.json(post);
     });
   });
