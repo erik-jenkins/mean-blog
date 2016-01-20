@@ -3,13 +3,13 @@
     <p class="error" ng-bind="error"></p>
     
     <input type="text" class="form-control" ng-model="post.title" name="title" placeholder="Post title" ng-required="true">
-    <p ng-show="writepost.title.$invalid && writepost.title.$touched" class="error">Title is required</p>
+    <p ng-show="writepost.title.$invalid && writepost.title.$touched" class="error text-danger">Title is required</p>
 
-    <input type="text" class="form-control" ng-model="post.slug" name="slug" placeholder="Post slug" ng-required="true" ng-pattern="/(\w+-{0,1})+\w+/">
-    <p ng-show="writepost.slug.$invalid && writepost.slug.$touched" class="error">Slug is required and must be in the format &lt;example-slug&gt;</p>
+    <input type="text" class="form-control" ng-model="post.slug" name="slug" placeholder="Post slug" ng-required="true" ng-pattern="/(\w+\-?)+/">
+    <p ng-show="writepost.slug.$invalid && writepost.slug.$touched" class="error text-danger">Slug is required and must be in the format <code>&lt;example-slug&gt;</code></p>
     
-    <textarea name="name" class="form-control" ng-model="post.content" name="content" placeholder="Post content" ng-required="true"></textarea>
-    <p ng-show="writepost.content.$invalid && writepost.content.$touched" class="error">Content is required</p>
+    <textarea class="form-control" ng-model="post.content" name="content" placeholder="Post content" ng-required="true"></textarea>
+    <p ng-show="writepost.content.$invalid && writepost.content.$touched" class="error text-danger">Content is required</p>
 
     <input type="text" class="form-control" ng-model="post.tags" name="post-tags" placeholder="Comma-separated tags" ng-list>
 

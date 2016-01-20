@@ -1,12 +1,13 @@
+// mongoose
+var mongoose = require('mongoose');
+
 // models
 var Post = require('./models/Post');
 
 module.exports = function(app) {
+  
+  // get all posts, ordered by time
   app.get('/api/posts', function(req, res) {
-    // get all posts
-    // Post.find(function(err, posts) {
-    //   res.json(posts);
-    // });
     Post.find()
       .sort({ timestamp: -1 })
       .exec(function(err, posts) {
@@ -15,8 +16,8 @@ module.exports = function(app) {
       });
   });
 
+  // get post by slug
   app.get('/api/posts/:slug', function(req, res) {
-    // get post by slug
     var slug = req.params.slug;
     Post.find({ slug: slug }, function(err, post) {
       if(err) res.json(err);
@@ -27,6 +28,7 @@ module.exports = function(app) {
   app.post('/api/posts', function(req, res) {
     // submit post to database
     var post = new Post(req.body);
+    post.timestamp = Date.now();
     post.save(function(err, post) {
       if(err) res.json(err);
       res.json(post);

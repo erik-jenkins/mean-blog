@@ -51,6 +51,16 @@ header {
   margin-bottom: 10px;
 }
 
+.writepost input.ng-touched.ng-invalid,
+.writepost textarea.ng-touched.ng-invalid {
+  border: 1px solid #d9534f;
+}
+
+.writepost input.ng-touched.ng-valid,
+.writepost textarea.ng-touched.ng-valid {
+  border: 1px solid #5cb85c;
+}
+
 .writepost textarea {
   height: 300px;
 }
