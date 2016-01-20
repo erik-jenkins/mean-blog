@@ -5,7 +5,11 @@ angular.module('mean-blog')
     $scope.submitPost = function() {
       $http.post('/api/posts', $scope.post)
         .success(function(data, status) {
-          if (data.error) $scope.error = data.error;
+          if (data.error) {
+            $scope.error = data.error;
+          } else {
+            $location.path('/');
+          }
         }
       );
     };

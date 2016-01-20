@@ -1,11 +1,19 @@
 <div class="writepost">
-  <form novalidate>
+  <form novalidate name="writepost" ng-submit="submitPost()">
     <p class="error" ng-bind="error"></p>
-    <input type="text" class="form-control" ng-model="post.title" placeholder="Post title" ng-required>
-    <input type="text" class="form-control" ng-model="post.slug" placeholder="Post slug" ng-required>
-    <textarea name="name" class="form-control" ng-model="post.content" placeholder="Post content" ng-required></textarea>
-    <input type="text" class="form-control" ng-model="post.tags" placeholder="Comma-separated tags" ng-list>
-    <input type="submit" class="btn btn-primary" ng-click="submitPost()" value="Submit post">
+    
+    <input type="text" class="form-control" ng-model="post.title" name="title" placeholder="Post title" ng-required="true">
+    <p ng-show="writepost.title.$invalid && writepost.title.$touched" class="error">Title is required</p>
+
+    <input type="text" class="form-control" ng-model="post.slug" name="slug" placeholder="Post slug" ng-required="true" ng-pattern="/(\w+-{0,1})+\w+/">
+    <p ng-show="writepost.slug.$invalid && writepost.slug.$touched" class="error">Slug is required and must be in the format &lt;example-slug&gt;</p>
+    
+    <textarea name="name" class="form-control" ng-model="post.content" name="content" placeholder="Post content" ng-required="true"></textarea>
+    <p ng-show="writepost.content.$invalid && writepost.content.$touched" class="error">Content is required</p>
+
+    <input type="text" class="form-control" ng-model="post.tags" name="post-tags" placeholder="Comma-separated tags" ng-list>
+
+    <button type="submit" class="btn btn-primary" ng-disabled="writepost.$invalid">Submit post</button>
   </form>
 
   <p ng-show="post">

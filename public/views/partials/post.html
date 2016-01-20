@@ -3,6 +3,6 @@
   <small class="post-timestamp text-muted" ng-bind="post.timestamp | date"></small>
   <span class="post-content" ng-bind-html="post.content | markdown"></span>
   <div class="tags">
-    <a ng-repeat="tag in post.tags" ng-bind="tag" ng-href="#" class="post-tag"></a>
+    <a ng-repeat="tag in post.tags track by $index" ng-bind="tag" ng-href="#" class="post-tag"></a>
   </div>
 </div>
