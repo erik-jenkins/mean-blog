@@ -18,7 +18,7 @@ angular.module('mean-blog')
           dateString += ' ' + date.getDate();
           dateString += ', ' + date.getFullYear();
           dateString += ' - ' + date.getHours();
-          dateString += ':' + date.getMinutes();
+          dateString += ':' + (date.getMinutes() < 10 ? '0': '') + date.getMinutes();
         }
 
         return dateString;

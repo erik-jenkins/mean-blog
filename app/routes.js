@@ -11,7 +11,10 @@ module.exports = function(app) {
     Post.find()
       .sort({ timestamp: -1 })
       .exec(function(err, posts) {
-        if(err) res.json(err);
+        if (err) {
+          res.json(err);
+        }
+        
         res.json(posts);
       });
   });
@@ -19,8 +22,12 @@ module.exports = function(app) {
   // get post by slug
   app.get('/api/posts/:slug', function(req, res) {
     var slug = req.params.slug;
+    
     Post.find({ slug: slug }, function(err, post) {
-      if(err) res.json(err);
+      if(err) { 
+        res.json(err);
+      }
+      
       res.json(post);
     });
   });
@@ -33,7 +40,6 @@ module.exports = function(app) {
     // attempt to save post
     post.save(function(err, post) {
       if (err) {
-        console.log(err);
         res.status(400).json(err);
       }
       
