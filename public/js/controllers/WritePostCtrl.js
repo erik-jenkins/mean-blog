@@ -3,16 +3,6 @@ angular.module('mean-blog')
   function($scope, $http, $location) {
 
     $scope.submitPost = function() {
-      // $http.post('/api/posts', $scope.post)
-      //   .success(function(data, status) {
-      //     if (data.error) {
-      //       console.log(data.error);
-      //     } else {
-      //       $location.path('/');
-      //     }
-      //   }
-      // );
-        
       $http({
         method: 'POST',
         url: '/api/posts/',
