@@ -5,9 +5,12 @@
 	  	  <a class="nav-item nav-link active" href="/">Erik Jenkins <span class="sr-only">(current)</span></a>
 	  	</div>
 	  			<div class="nav navbar-nav pull-xs-right">
-	  				<a href="#" class="nav-item nav-link">Blog</a>
-	  				<a href="#" class="nav-item nav-link">Github</a>
+	  				<a href="/" class="nav-item nav-link">Blog</a>
+	  				<a href="http://github.com/erik-jenkins" class="nav-item nav-link" target="_blank">Github</a>
 	  				<a href="#" class="nav-item nav-link">Twitter</a>
+	  				
+	  				<a href="/#/writepost" class="nav-item nav-link" ng-show="user">Write post</a>
+	  				<a href="#" class="nav-item nav-link" ng-show="user" ng-click="logout()">Log out</a> 				
 	  			</div>
 	  </div>
 	</nav>

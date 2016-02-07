@@ -10,6 +10,13 @@ header {
   margin-bottom: 30px;
 }
 
+footer p {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 18px;
+  text-align: center;
+}
+
 /* post styles */
 
 .post {
@@ -29,6 +36,10 @@ header {
   padding: 8px;
   border-radius: 4px;
   background: #F5F5F5;
+}
+
+.post img {
+  max-width: 100%;
 }
 
 .post-tag {
@@ -67,4 +78,9 @@ header {
 
 .writepost form {
   margin-bottom: 20px;
+}
+
+/* login styles */
+.login input {
+  margin-bottom: 10px;
 }

@@ -8,6 +8,9 @@ var auth = jwt({
 // mongoose
 var mongoose = require('mongoose');
 
+// passport
+var passport = require('passport');
+
 // models
 var Post = require('./models/Post');
 var User = require('./models/User');
@@ -40,7 +43,7 @@ module.exports = function(app) {
     });
   });
 
-  app.post('/api/posts', function(req, res) {
+  app.post('/api/posts', auth, function(req, res) {
     // submit post to database
     var post = new Post(req.body);
     post.timestamp = Date.now();

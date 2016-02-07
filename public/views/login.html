@@ -1,0 +1,13 @@
+<div class="login">
+  <form novalidate name="login-form" ng-submit="login()">
+    <p class="error" ng-bind="error"></p>
+    
+    <input type="text" class="form-control" ng-model="user.username" name="username" placeholder="Username" ng-required="true">
+    <p ng-show="login-form.username.$invalid && login-form.username.$touched" class="error text-danger">Username is required</p>
+    
+    <input type="password" class="form-control" ng-model="user.password" name="password" placeholder="Password" ng-required="true">
+    <p ng-show="login-form.password.$invalid && login-form.password.$touched" class="error text-danger">Password is required</p>
+    
+    <button type="submit" class="btn btn-primary" ng-disabled="login-form.$invalid">Log in</button>
+  </form>
+</div>

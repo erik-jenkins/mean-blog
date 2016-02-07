@@ -4,6 +4,7 @@
   "description": "A blog written using the MEAN stack",
   "main": "index.js",
   "scripts": {
+    "prestart": "npm install",
     "start": "node index.js"
   },
   "engines": {
