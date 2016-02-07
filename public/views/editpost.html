@@ -1,0 +1,19 @@
+<div class="editpost">
+  <form novalidate name="editpost" ng-submit="editPost()">
+    
+    <input type="text" class="form-control" ng-model="post.title" name="title" placeholder="Post title" ng-required="true" ng-bind="post.title">
+    <p ng-show="editpost.title.$invalid && editpost.title.$touched" class="error text-danger">Title is required</p>
+    
+    <textarea class="form-control" ng-model="post.content" name="content" placeholder="Post content" ng-required="true"></textarea>
+    <p ng-show="editpost.content.$invalid && editpost.content.$touched" class="error text-danger">Content is required</p>
+
+    <input type="text" class="form-control" ng-model="post.tags" name="post-tags" placeholder="Comma-separated tags" ng-list>
+    
+  </form>
+  
+  <p ng-show="post">
+    Post preview:
+  </p>
+  <div class="post-preview" ng-include="'views/partials/post.html'">
+  </div>
+</div>

@@ -17,6 +17,10 @@ angular.module('mean-blog', ['ngRoute', 'ngSanitize'])
         templateUrl: 'views/writepost.html',
         controller: 'WritePostCtrl'
       })
+      .when('/editpost/:slug', {
+        templateUrl: 'views/editpost.html',
+        controller: 'EditPostCtrl'
+      })
       .otherwise({
         redirectTo: '/posts'
       });

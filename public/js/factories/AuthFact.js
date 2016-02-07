@@ -7,7 +7,7 @@ angular.module('mean-blog')
         method: 'POST',
         url: '/api/login/',
         data: user
-      })
+      });
     };
     
     auth.logout = function() {

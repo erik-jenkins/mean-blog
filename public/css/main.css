@@ -17,9 +17,24 @@ footer p {
   text-align: center;
 }
 
+input, textarea {
+  margin-bottom: 10px;
+}
+
+input.ng-touched.ng-invalid,
+textarea.ng-touched.ng-invalid {
+  border: 1px solid #d9534f;
+}
+
+input.ng-touched.ng-valid,
+textarea.ng-touched.ng-valid {
+  border: 1px solid #5cb85c;
+}
+
 /* post styles */
 
 .post {
+  position: relative;
   margin-bottom: 40px;
 }
 
@@ -58,29 +73,10 @@ footer p {
 
  /* writepost styles */
 
-.writepost input, .writepost textarea {
-  margin-bottom: 10px;
-}
-
-.writepost input.ng-touched.ng-invalid,
-.writepost textarea.ng-touched.ng-invalid {
-  border: 1px solid #d9534f;
-}
-
-.writepost input.ng-touched.ng-valid,
-.writepost textarea.ng-touched.ng-valid {
-  border: 1px solid #5cb85c;
-}
-
 .writepost textarea {
   height: 300px;
 }
 
 .writepost form {
   margin-bottom: 20px;
-}
-
-/* login styles */
-.login input {
-  margin-bottom: 10px;
 }

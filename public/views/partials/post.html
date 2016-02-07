@@ -1,5 +1,13 @@
 <div class="post">
   <h1 class="post-title"><a ng-href="#/post/{{post.slug}}" ng-bind="post.title"></a></h1>
+  <small ng-show="user">
+    <span class="edit">
+      <a href="#" class="text-primary"><i class="fa fa-pencil-square-o"></i></a>
+    </span>
+    <span class="delete">
+      <a href="#"><i class="fa fa-minus-square-o"></i></a>
+    </span>
+  </small>
   <small class="post-timestamp text-muted" ng-bind="post.timestamp | date"></small>
   <span class="post-content" ng-bind-html="post.content | markdown"></span>
   <div class="tags">
