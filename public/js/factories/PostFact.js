@@ -1,5 +1,6 @@
 angular.module('mean-blog')
-  .factory('post', ['$http', function($http) {
+  .factory('post', ['$http', 'auth', 
+  function($http, auth) {
     var post = {};
     
     post.getAll = function() {
@@ -15,6 +16,15 @@ angular.module('mean-blog')
         url: '/api/posts/' + slug
       });
     };
+    
+    post.submit = function(post) {
+      return $http({
+        method: 'POST',
+        headers: {Authorization: 'Bearer ' + auth.getToken()},
+        url: '/api/posts/',
+        data: post
+      });
+    }
     
     return post;
     
