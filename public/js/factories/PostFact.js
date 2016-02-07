@@ -24,7 +24,16 @@ angular.module('mean-blog')
         url: '/api/posts/',
         data: post
       });
-    }
+    };
+    
+    post.editPost = function(post) {
+      return $http({
+        method: 'POST',
+        headers: {Authorization: 'Bearer ' + auth.getToken()},
+        url: '/api/editpost/' + post.slug,
+        data: post
+      });
+    };
     
     return post;
     

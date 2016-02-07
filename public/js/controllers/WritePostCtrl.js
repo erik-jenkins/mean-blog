@@ -5,7 +5,7 @@ angular.module('mean-blog')
     if (!auth.isLoggedIn()) {
       $location.path('/');
     }
-      
+          
     $scope.submitPost = function() {
       post.submit($scope.post)
         .then(function(response) {

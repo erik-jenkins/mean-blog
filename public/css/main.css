@@ -17,8 +17,16 @@ footer p {
   text-align: center;
 }
 
+form {
+  margin-bottom: 20px;
+}
+
 input, textarea {
   margin-bottom: 10px;
+}
+
+textarea {
+  height: 300px;
 }
 
 input.ng-touched.ng-invalid,
@@ -69,14 +77,4 @@ textarea.ng-touched.ng-valid {
   background: #666;
   color: #F5F5F5;
   text-decoration: none;
-}
-
- /* writepost styles */
-
-.writepost textarea {
-  height: 300px;
-}
-
-.writepost form {
-  margin-bottom: 20px;
 }

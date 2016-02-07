@@ -12,5 +12,14 @@ angular.module('mean-blog')
       }, function(err) {
         console.log(err);
       });
+      
+    $scope.editPost = function() {
+      post.editPost($scope.post)
+        .then(function(response) {
+          $location.path('/');
+        }, function(err) {
+          $scope.error = err.message;
+        });
+    };
     
   }]);

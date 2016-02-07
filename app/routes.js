@@ -57,6 +57,22 @@ module.exports = function(app) {
       res.json(post);
     });
   });
+  
+  app.post('/api/editpost/:slug', auth, function(req, res) {    
+    console.log(req.params.slug);
+    
+    Post.update({ slug: req.params.slug }, {
+      title: req.body.title,
+      content: req.body.content,
+      tags: req.body.tags
+    }, function(err) {
+      if (err) {
+        res.status(400).json(err);
+      }
+      
+      res.status(200).json(req.body);
+    });
+  });
 
   app.post('/api/login', function(req, res, next) {
     if (!req.body.username || !req.body.password) {
