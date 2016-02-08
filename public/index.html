@@ -24,7 +24,7 @@
 
   <!-- view -->
   <div class="container">
-    <div ng-view></div>
+    <div ui-view></div>
   </div>
 
   <!-- jquery -->
@@ -35,7 +35,7 @@
 
   <!-- angular -->
   <script src="components/angular/angular.min.js"></script>
-  <script src="components/angular-route/angular-route.min.js"></script>
+  <script src="components/angular-ui-router/release/angular-ui-router.min.js"></script>
   <script src="components/angular-sanitize/angular-sanitize.min.js"></script>
   
   <!-- highlightjs -->
@@ -49,15 +49,11 @@
 
   <!-- controllers -->
   <script src="js/controllers/MainCtrl.js"></script>
-  <script src="js/controllers/LoginCtrl.js"></script>
-  <script src="js/controllers/PostListCtrl.js"></script>
-  <script src="js/controllers/ViewPostCtrl.js"></script>
-  <script src="js/controllers/WritePostCtrl.js"></script>
-  <script src="js/controllers/EditPostCtrl.js"></script>
-  
+  <script src="js/controllers/PostCtrl.js"></script>
+    
   <!-- factories -->
-  <script src="js/factories/AuthFact.js"></script>
-  <script src="js/factories/PostFact.js"></script>
+  <script src="js/factories/AuthService.js"></script>
+  <script src="js/factories/PostService.js"></script>
 
   <!-- filters -->
   <script src="js/filters/DateFilter.js"></script>

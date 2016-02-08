@@ -1,6 +1,6 @@
 angular.module('mean-blog')
-  .factory('post', ['$http', 'auth', 
-  function($http, auth) {
+  .factory('PostService', ['$http', 'AuthService', 
+  function($http, AuthService) {
     var post = {};
     
     post.getAll = function() {
@@ -17,10 +17,17 @@ angular.module('mean-blog')
       });
     };
     
+    post.getByTag = function(tag) {
+      return $http({
+        method: 'GET',
+        url: '/api/tag/' + tag
+      });
+    }
+    
     post.submit = function(post) {
       return $http({
         method: 'POST',
-        headers: {Authorization: 'Bearer ' + auth.getToken()},
+        headers: {Authorization: 'Bearer ' + AuthService.getToken()},
         url: '/api/posts/',
         data: post
       });
@@ -29,9 +36,17 @@ angular.module('mean-blog')
     post.editPost = function(post) {
       return $http({
         method: 'POST',
-        headers: {Authorization: 'Bearer ' + auth.getToken()},
-        url: '/api/editpost/' + post.slug,
+        headers: {Authorization: 'Bearer ' + AuthService.getToken()},
+        url: '/api/edit/' + post.slug,
         data: post
+      });
+    };
+    
+    post.deletePost = function(slug) {
+      return $http({
+        method: 'GET',
+        headers: {Authorization: 'Bearer ' + AuthService.getToken()},
+        url: '/api/delete/' + slug
       });
     };
     

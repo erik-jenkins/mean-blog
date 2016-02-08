@@ -1,14 +1,14 @@
 angular.module('mean-blog')
-	.controller('MainCtrl', ['$scope', 'auth', 
-	function($scope, auth) {
+	.controller('MainCtrl', ['$scope', 'AuthService', 
+	function($scope, AuthService) {
 		
-		$scope.$watch(auth.isLoggedIn, function(isLoggedIn) {
+		$scope.$watch(AuthService.isLoggedIn, function(isLoggedIn) {
 			$scope.isLoggedIn = isLoggedIn;
-			$scope.user = auth.currentUser();
+			$scope.user = AuthService.currentUser();
 		});
 		
 		$scope.logout = function() {
-			auth.logout();
+			AuthService.logout();
 		};
 		
 	}]);

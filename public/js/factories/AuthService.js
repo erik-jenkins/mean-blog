@@ -1,5 +1,5 @@
 angular.module('mean-blog')
-  .factory('auth', ['$http', '$window', function($http, $window) {
+  .factory('AuthService', ['$http', '$window', function($http, $window) {
     var auth = {};
       
     auth.login = function(user) {

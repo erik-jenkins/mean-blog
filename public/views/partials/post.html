@@ -1,16 +1,16 @@
-<div class="post">
-  <h1 class="post-title"><a ng-href="#/post/{{post.slug}}" ng-bind="post.title"></a></h1>
-  <small ng-show="user">
+<div class="post" ng-controller="PostCtrl">
+  <h1 class="post-title"><a ng-href="#/post/{{post.slug}}" ng-click="getOne()" ng-bind="post.title"></a></h1>
+  <small ng-show="user && post">
     <span class="edit">
-      <a href="#/editpost/{{post.slug}}" class="text-primary"><i class="fa fa-pencil-square-o"></i></a>
+      <a href="#/edit/{{post.slug}}" class="text-primary"><i class="fa fa-pencil-square-o"></i></a>
     </span>
     <span class="delete">
-      <a href="#"><i class="fa fa-minus-square-o"></i></a>
+      <a href="#" ng-click="deletePost()"><i class="fa fa-minus-square-o"></i></a>
     </span>
   </small>
   <small class="post-timestamp text-muted" ng-bind="post.timestamp | date"></small>
   <span class="post-content" ng-bind-html="post.content | markdown"></span>
   <div class="tags">
-    <a ng-repeat="tag in post.tags track by $index" ng-bind="tag" ng-href="#" class="post-tag"></a>
+    <a ng-repeat="tag in post.tags track by $index" ng-bind="tag" ui-sref="ViewTag({tag: tag})" class="post-tag"></a>
   </div>
 </div>
