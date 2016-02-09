@@ -2,19 +2,15 @@
 	<nav class="navbar navbar-full navbar-dark bg-primary">
 	  <div class="container">
 	  	<div class="nav navbar-nav">
-	  	  <a class="nav-item nav-link active" href="/">Erik Jenkins <span class="sr-only">(current)</span></a>
+	  	  <a class="nav-item nav-link active brand" href="/">Erik Jenkins <span class="sr-only">(current)</span></a>
 	  	</div>
-	  			<div class="nav navbar-nav pull-xs-right hidden-sm-up">
-	  				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar"><i class="fa fa-bars"></i></button>
-	  			</div>
-	  			<div class="nav navbar-nav pull-xs-right collapse navbar-toggleable-xs" id="exCollapsingNavbar">
-	  				<a href="/" class="nav-item nav-link">Blog</a>
-	  				<a href="http://github.com/erik-jenkins" class="nav-item nav-link" target="_blank">Github</a>
-	  				<a href="http://twitter.com/ejenks" class="nav-item nav-link" target="_blank">Twitter</a>
-	  				
-	  				<a href="/#/write" class="nav-item nav-link" ng-show="user">Write post</a>
-	  				<a href="#" class="nav-item nav-link" ng-show="user" ng-click="logout()">Log out</a> 				
-	  			</div>
+			<div class="nav navbar-nav pull-xs-right">
+				<a title="GitHub" href="http://github.com/erik-jenkins" class="nav-item nav-link" target="_blank"><i class="fa fa-github-square"></i></a>
+				<a title="Twitter" href="http://twitter.com/ejenks" class="nav-item nav-link" target="_blank"><i class="fa fa-twitter-square"></i></a>
+				<a title="Steam" href="https://steamcommunity.com/id/erikjenkins" class="nav-item nav-link" target="_blank"><i class="fa fa-steam-square"></i></a>
+				<a title="Write post" href="/#/write" class="nav-item nav-link" ng-show="user"><i class="fa fa-pencil-square"></i></a>
+				<a title="Log out" href="#" class="nav-item nav-link" ng-show="user" ng-click="logout()"><i class="fa fa-sign-out"></i></a> 				
+			</div>
 	  </div>
 	</nav>
 </header>
